@@ -19,7 +19,7 @@ import "./App.css";
 function App() {
   return (
     <Canvas camera={{ fov: 40 }}>
-      <ambientLight intensity={0.4} />
+      <ambientLight intensity={1} />
       <OrbitControls enableZoom={true} />
       <Desk position={[0, -5, 0]} scale={[7, 7, 7]} />
       {/* <Mac /> */}
