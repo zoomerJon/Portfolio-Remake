@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #333;
+}
+
+.content {
+  width: 334px;
+  height: 216px;
+  overflow-y: auto;
+}
+
+.content2 {
+  background-color: aquamarine;
+  width: 334px;
+  height: 216px;
+  overflow-y: auto;
+}
+
+.video {
+  height: 100%;
+  width: 100%;
+}
+
+/* .video-tablet {
+  width: 334px;
+  height: 216px;
+} */
