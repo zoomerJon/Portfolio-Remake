@@ -37,12 +37,11 @@ export default function Model(props) {
           >
             <video
               className="video-tablet"
-              //   id="video"
               src="/vegas.mp4"
               muted
               loop
               autoPlay
-              // width={window.innerWidth}
+              playsInline
             ></video>
           </Html>
         </mesh>
