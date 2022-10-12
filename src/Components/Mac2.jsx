@@ -40,10 +40,10 @@ export default function Model(props) {
               rotation-x={-Math.PI / 8.8}
               position={[0, 10.2, -15.5]}
               // scale={0.075}
-              scale={[3.65, 3.65, 3.6]}
+              scale={[3.65, 3.67, 3.6]}
               transform
               occlude
-              className="content2"
+              className="content mac"
             >
               <div>
                 {/* <video
