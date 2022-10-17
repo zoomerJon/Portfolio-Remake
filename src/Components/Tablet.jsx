@@ -31,7 +31,7 @@ export default function Model(props) {
             rotation={[1.58, -Math.PI, 0]}
             position={[0.0036, 0.004, 0]}
             // scale={0.0045}
-            scale={[0.0045, 0.0055, 0.0045]}
+            scale={[0.0045, 0.0057, 0.0045]}
             transform
             occlude
           >

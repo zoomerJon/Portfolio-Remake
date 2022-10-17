@@ -88,7 +88,7 @@ export default function Model(props) {
               <Html
                 // rotation-y={-Math.PI}
                 rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
-                position={[0, 0, 0]}
+                // position={[0, 0, 0]}
                 // scale={0.075}
                 scale={[0.38, 0.38, 0.38]}
                 transform
