@@ -7,12 +7,41 @@ title: 2021 Macbook Pro 14" (M1 Pro / M1 Max)
 */
 
 import React, { useRef } from "react";
+import * as THREE from "three";
+import { useFrame, useThree } from "@react-three/fiber";
 import { Html, useGLTF } from "@react-three/drei";
 
 export default function Model(props) {
   const { nodes, materials } = useGLTF("/mac-v1.glb");
+
+  const group = useRef();
+  const state = new useThree();
+
+  useFrame((delta) => {
+    const t = state.clock.getElapsedTime();
+    group.current.rotation.x = THREE.MathUtils.lerp(
+      group.current.rotation.x,
+      Math.cos(t / 2) / 20 + 0.15,
+      0.1
+    );
+    group.current.rotation.y = THREE.MathUtils.lerp(
+      group.current.rotation.y,
+      Math.sin(t / 4) / 20,
+      0.1
+    );
+    group.current.rotation.z = THREE.MathUtils.lerp(
+      group.current.rotation.z,
+      Math.sin(t / 8) / 20,
+      0.1
+    );
+    group.current.position.y = THREE.MathUtils.lerp(
+      group.current.position.y,
+      (Math.sin(t / 2) * 0.25) / 2,
+      0.1
+    );
+  });
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} ref={group}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <mesh

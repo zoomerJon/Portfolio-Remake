@@ -1,12 +1,15 @@
 import { useRef, useState } from "react";
+import * as THREE from "three";
 import { Backdrop } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { useEffect } from "react";
+import gsap from "gsap";
 
 export default function Background() {
   const [color, setColor] = useState("#0580c7");
   const [active, setActive] = useState(false);
   const mesh = useRef();
+  const state = new useThree();
 
   const colors = ["#353540", "#04a437", "#ff6013", "#0580c7"];
   let curColor = -1;
@@ -17,10 +20,25 @@ export default function Background() {
       if (curColor >= colors.length) {
         curColor = 0;
       }
-      console.log(colors.length);
+      console.log(state.camera.position);
+      console.log(state.camera.rotation);
+      console.log(
+        new THREE.Vector3(0, 0, -2)
+          .applyQuaternion(state.camera.quaternion)
+          .add(state.camera.position)
+      );
       setColor(colors[curColor]);
     }, 2000);
   }, [color]);
+
+  // useFrame((delta) => {
+  //   state.camera.lookAt(
+  //     0.41458645222258866,
+  //     1.5348881153167997,
+  //     9.746772178051893
+  //   );
+  //   state.camera.updateProjectionMatrix();
+  // });
 
   // useFrame(() => {
   //   if (active) {
@@ -37,7 +55,7 @@ export default function Background() {
       receiveShadow
       floor={2}
       position={[0, -0.8, -3]}
-      scale={[50, 10, 4]}
+      scale={[50, 10, 8]}
       onClick={() => {
         setActive(!active);
       }}
