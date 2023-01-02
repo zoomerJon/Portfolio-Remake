@@ -167,3 +167,7 @@ span.header {
   top: 70px;
   /* top: 80px; */
 }
+
+.test a:hover {
+  color: #000;
+}

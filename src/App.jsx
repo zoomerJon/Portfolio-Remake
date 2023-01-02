@@ -118,7 +118,8 @@ const App = () => {
           letterSpacing={-0.06}
           size={1.5}
           font="/Inter_Bold.json"
-          position={[-5.25, 4, -2]}
+          position={[-5.25, 3.5, -2]}
+          rotation={[0, 0.2, 0]}
         >
           Hello!
           <meshNormalMaterial />
