@@ -22,14 +22,6 @@ import Stand from "./Components/Stand";
 import Tablet from "./Components/Tablet";
 import "./App.css";
 
-document.addEventListener("touchstart", function (e) {
-  e.preventDefault();
-});
-
-document.ontouchmove = function (e) {
-  e.preventDefault();
-};
-
 function Lights() {
   const light = useRef();
   useHelper(light, THREE.PointLightHelper);
