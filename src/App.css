@@ -150,7 +150,7 @@ span.header {
   display: flex;
   flex-direction: column;
   top: 0;
-  /* overflow-y: hidden; */
+  overflow-y: hidden;
   z-index: 99;
 }
 
