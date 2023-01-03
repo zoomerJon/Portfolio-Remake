@@ -1,0 +1,7 @@
+.content-mac {
+  background-color: #333;
+  border-radius: 5px;
+  height: 216px;
+  width: 334px;
+  overflow-y: auto;
+}

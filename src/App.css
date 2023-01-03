@@ -21,19 +21,8 @@ body {
   background-color: #222;
 }
 
-.content {
-  border-radius: 5px;
-  height: 216px;
-  width: 334px;
-  overflow-y: auto;
-}
-
-.mac {
-  background-color: aquamarine;
-}
-
 .phone {
-  background-color: blanchedalmond;
+  background-color: slateblue;
   border-radius: 10px;
   width: 180px;
   height: 390px;

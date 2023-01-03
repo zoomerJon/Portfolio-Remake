@@ -10,6 +10,7 @@ import React, { useRef } from "react";
 import * as THREE from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Html, useGLTF } from "@react-three/drei";
+import WebPage from "../WebPage/WebPage.jsx";
 
 export default function Model(props) {
   const { nodes, materials } = useGLTF("/mac-v1.glb");
@@ -72,26 +73,9 @@ export default function Model(props) {
               scale={[3.65, 3.67, 3.6]}
               transform
               occlude
-              className="content mac"
+              // className="content mac"
             >
-              <div>
-                {/* <video
-                  className="video"
-                  //   id="video"
-                  src="/vegas.mp4"
-                  muted
-                  loop
-                  autoPlay
-                  // width={window.innerWidth}
-                ></video> */}
-                <h1>hello this is a thing</h1>
-                <h1>hello this is a thing</h1>
-                <h1>hello this is a thing</h1>
-                <h1>hello this is a thing</h1>
-                <h1>hello this is a thing</h1>
-                <h1>hello this is a thing</h1>
-                <h1>hello this is a thing</h1>
-              </div>
+              <WebPage />
             </Html>
           </mesh>
           <mesh
