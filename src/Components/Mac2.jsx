@@ -37,7 +37,7 @@ export default function Model(props) {
     );
     group.current.position.y = THREE.MathUtils.lerp(
       group.current.position.y,
-      (Math.sin(t / 2) * 0.25) / 2,
+      (Math.sin(t / 2) * 0.25) / 1,
       0.1
     );
   });
@@ -68,7 +68,7 @@ export default function Model(props) {
           >
             <Html
               rotation-x={-Math.PI / 8.8}
-              position={[0, 10.2, -15.5]}
+              position={[0, 10.28, -15.5]}
               // scale={0.075}
               scale={[3.65, 3.67, 3.6]}
               transform
