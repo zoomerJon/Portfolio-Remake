@@ -41,11 +41,15 @@ function TabletSetup() {
   return (
     <>
       <Tablet
-        position={[-3.4, 0.87, -0.68]}
-        rotation={[-0.5, -Math.PI, 0]}
+        position={[-3.4, 1, 0]}
+        rotation={[0, -Math.PI + 0.5, 0]}
         scale={[10, 10, 10]}
       />
-      <Stand position={[-4, -0.35, 0]} scale={[0.015, 0.015, 0.015]} />
+      <Stand
+        position={[-3.8, -0.35, 0.3]}
+        scale={[0.015, 0.015, 0.015]}
+        rotation={[0, 0.5, 0]}
+      />
     </>
   );
 }
@@ -67,8 +71,8 @@ const App = () => {
         {/* <ambientLight intensity={0.2} /> */}
         <Lights />
         <Phone
-          position={[3.5, 0, -2]}
-          rotation={[Math.PI / 1.1, 0, -Math.PI]}
+          position={[3.8, 0.4, -1]}
+          rotation={[Math.PI / 1.1 + 0.2, 0.5, -Math.PI + 0.04]}
           scale={[0.7, 0.7, 0.7]}
         />
         <TabletSetup />
@@ -81,10 +85,10 @@ const App = () => {
           height={0.5}
           lineHeight={0.5}
           letterSpacing={-0.06}
-          size={1.5}
+          size={1.1}
           font="/Inter_Bold.json"
-          position={[-5.25, 3.5, -2]}
-          rotation={[0, 0.2, 0]}
+          position={[-4.8, 3, -0.5]}
+          rotation={[0.05, 0.4, -0.03]}
         >
           Hello!
           <meshNormalMaterial />
@@ -102,12 +106,11 @@ const App = () => {
           <PerspectiveCamera
             makeDefault
             fov={40}
-            position={[
-              0.826936462123091, 4.091559396677518, 11.117779453143493,
-            ]}
-            rotation={[
-              -0.20436300171831873, -0.05690351967158457, -0.011786707378217003,
-            ]}
+            position={[0, 2.95, 8]}
+            // rotation={[
+            //   -0.16216382099825055, 0.050260368961909295, 0.008218970661645904,
+            // ]}
+            rotation={[-0.16216382099825055, 0, 0]}
           />
         </PresentationControls>
         {/* <OrbitControls enableZoom={true} /> */}

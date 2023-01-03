@@ -11,7 +11,7 @@ export default function Background() {
   const mesh = useRef();
   const state = new useThree();
 
-  const colors = ["#353540", "#04a437", "#ff6013", "#0580c7"];
+  const colors = ["#04a437", "#ff6013", "#353540", "#0580c7"];
   let curColor = -1;
 
   useEffect(() => {
