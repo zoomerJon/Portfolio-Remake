@@ -10,6 +10,9 @@
 
 #root {
   position: absolute;
+  top: 0;
+  left: 0;
+  overflow-y: hidden;
   width: 100vw;
   height: 100vh;
 }
@@ -57,6 +60,7 @@ canvas {
   position: fixed !important;
   top: 0px;
   left: 0px;
+  overflow: hidden;
   width: 100vw !important;
   height: 100vh !important;
   z-index: 1;
@@ -82,15 +86,10 @@ span.header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;
   /* transform: translate3d(0, -50%, 0); */
   border-radius: 0.4em;
   background-color: rgba(3, 3, 3, 0.2);
-  padding: 2em 0em;
-  line-height: 0.9em;
-  pointer-events: none;
-  top: 120px;
-  right: 50px;
+  line-height: 1;
   z-index: 99;
 }
 
@@ -125,15 +124,15 @@ span.header {
   font-family: "Josefin Sans", sans-serif;
   font-size: 3em;
   font-weight: 700;
-  margin: 0.5em 0;
+  /* margin: 0.5em 0; */
 }
 
 .profile-description {
   font-size: 2em;
   line-height: 1;
-  padding: 0 1em;
+  /* padding: 0 1em; */
   text-align: center;
-  margin-bottom: 1em;
+  /* margin-bottom: 1em; */
 }
 
 .button-container {
@@ -153,21 +152,50 @@ span.header {
 
 .test {
   position: absolute;
-  width: 500px;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  /* overflow-y: hidden; */
   z-index: 99;
-  right: 0;
 }
 
 .test a {
   color: #000;
   text-decoration: none;
   font-size: 1.5em;
-  position: relative;
-  top: 70px;
-  /* top: 80px; */
 }
 
 .test a:hover {
   color: #000;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .test {
+    right: 5vw;
+    top: 0;
+    height: 40vh;
+    width: 90vw;
+  }
+  .profile-container {
+    width: 100%;
+    padding: 0;
+    top: 0px;
+    right: 0;
+  }
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .test {
+    width: 500px;
+    /* height: 100vh; */
+    right: 3em;
+    top: 1em;
+  }
+  .profile-container {
+    width: 100%;
+    padding: 2em 0em;
+    top: 0px;
+  }
 }
