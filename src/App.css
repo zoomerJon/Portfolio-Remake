@@ -19,8 +19,10 @@
 
 body {
   background-color: #222;
-  /* overflow: hidden; */
-  /* position: relative; */
+  overflow-y: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
 }
 
 .phone {
