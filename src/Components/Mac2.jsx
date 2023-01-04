@@ -73,7 +73,7 @@ export default function Model(props) {
               scale={[3.65, 3.67, 3.6]}
               transform
               occlude
-              // className="content mac"
+              className="content-mac mac"
             >
               <WebPage />
             </Html>

@@ -8,6 +8,7 @@ title: Smartphone 3D Model
 
 import React, { useRef } from "react";
 import { Html, useGLTF } from "@react-three/drei";
+import WebPage from "../WebPage/WebPage.jsx";
 
 export default function Model(props) {
   const { nodes, materials } = useGLTF("/phone-v1.glb");
@@ -95,24 +96,7 @@ export default function Model(props) {
                 occlude
                 className="phone"
               >
-                <div>
-                  {/* <video
-                  className="video"
-                  //   id="video"
-                  src="/vegas.mp4"
-                  muted
-                  loop
-                  autoPlay
-                  // width={window.innerWidth}
-                ></video> */}
-                  <h1>hello this is a thing</h1>
-                  <h1>hello this is a thing</h1>
-                  <h1>hello this is a thing</h1>
-                  <h1>hello this is a thing</h1>
-                  <h1>hello this is a thing</h1>
-                  <h1>hello this is a thing</h1>
-                  <h1>hello this is a thing</h1>
-                </div>
+                <WebPage />
               </Html>
             </mesh>
             <mesh

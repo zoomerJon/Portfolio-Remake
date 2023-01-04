@@ -5,7 +5,7 @@
 }
 
 *::-webkit-scrollbar {
-  width: 12px;
+  width: 0px;
 }
 
 #root {
@@ -29,15 +29,6 @@ body {
   height: 100vh;
   top: 0;
   left: 0;
-}
-
-.phone {
-  background-color: slateblue;
-  border-radius: 10px;
-  width: 180px;
-  height: 390px;
-  overflow-y: auto;
-  scrollbar-width: none;
 }
 
 .video {
@@ -144,6 +135,7 @@ span.header {
 }
 
 .button-title {
+  color: #000;
   font-size: 16px;
   font-weight: 700;
   margin: 0px 5px;
@@ -166,11 +158,6 @@ span.header {
 
 .test a:hover {
   color: #000;
-}
-
-.recent-works {
-  display: grid;
-  grid-template-columns: 1fr;
 }
 
 /* Mobile */
@@ -208,9 +195,9 @@ span.header {
   .profile-description {
     margin-bottom: 0.5em;
   }
-  .recent-works {
+  /* .recent-works {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 32px 24px;
     margin: 0 1em;
-  }
+  } */
 }

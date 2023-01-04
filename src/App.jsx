@@ -88,7 +88,7 @@ const App = () => {
           size={1.1}
           font="/Inter_Bold.json"
           position={[-4.8, 3, -0.5]}
-          rotation={[0.05, 0.4, -0.03]}
+          rotation={[0.05, 0.3, -0.01]}
         >
           Hello!
           <meshNormalMaterial />
