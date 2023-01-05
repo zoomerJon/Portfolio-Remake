@@ -94,9 +94,9 @@ const App = () => {
           letterSpacing={-0.06}
           size={mobile ? 0.8 : 1.1}
           font="/Inter_Bold.json"
-          position={mobile ? [-1.4, 2.64, -2] : [-4.8, 3, -0.5]}
+          position={mobile ? [-1.4, 2.62, -2] : [-4.8, 3, -0.5]}
           // position={[-4.8, 3, -0.5]}
-          rotation={mobile ? [0.03, 0, 0] : [0.05, 0.3, -0.01]}
+          rotation={mobile ? [0.0, 0, 0] : [0.05, 0.3, -0.01]}
           // rotation={[0.05, 0.3, -0.01]}
         >
           Hello!
