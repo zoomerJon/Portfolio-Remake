@@ -103,7 +103,7 @@ const App = () => {
           <meshNormalMaterial />
         </Text3D>
         <Mac2
-          position={[0, -0.35, 0]}
+          position={[0, 0, 0]}
           scale={[10, 10, 10]}
           castShadow
           mobile={mobile}

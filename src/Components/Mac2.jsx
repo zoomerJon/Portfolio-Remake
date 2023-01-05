@@ -40,7 +40,7 @@ export default function Model(props) {
     );
     group.current.position.y = THREE.MathUtils.lerp(
       group.current.position.y,
-      (Math.sin(t / 2) * yTranslation) / 1,
+      Math.sin(t / 2) * yTranslation,
       0.1
     );
   });
