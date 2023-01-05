@@ -58,9 +58,9 @@ function TabletSetup() {
 const App = () => {
   const [mobile, setMobile] = useState(false);
 
-  // useEffect();
-
-  // window.innerHeight > window.innerWidth && setMobile(true);
+  useEffect(() => {
+    window.innerHeight > window.innerWidth && setMobile(true);
+  }, []);
 
   return (
     <div className="main">
@@ -113,8 +113,8 @@ const App = () => {
           <PerspectiveCamera
             makeDefault
             fov={40}
-            // position={mobile ? [0, 2.95, 12] : [0, 2.95, 8]}
-            position={[0, 2.95, 8]}
+            position={mobile ? [0, 3, 12] : [0, 2.95, 8]}
+            // position={[0, 2.95, 8]}
             // rotation={[
             //   -0.16216382099825055, 0.050260368961909295, 0.008218970661645904,
             // ]}
