@@ -94,7 +94,7 @@ const App = () => {
           letterSpacing={-0.06}
           size={mobile ? 0.8 : 1.1}
           font="/Inter_Bold.json"
-          position={mobile ? [-1.4, 3, -0.5] : [-4.8, 3, -0.5]}
+          position={mobile ? [-1.4, 3, -2] : [-4.8, 3, -0.5]}
           // position={[-4.8, 3, -0.5]}
           rotation={mobile ? [0.03, 0, 0] : [0.05, 0.3, -0.01]}
           // rotation={[0.05, 0.3, -0.01]}
@@ -102,13 +102,18 @@ const App = () => {
           Hello!
           <meshNormalMaterial />
         </Text3D>
-        <Mac2 position={[0, -0.35, 0]} scale={[10, 10, 10]} castShadow />
+        <Mac2
+          position={[0, -0.35, 0]}
+          scale={[10, 10, 10]}
+          castShadow
+          mobile={mobile}
+        />
         <PresentationControls
           global
           cursor={false}
           // rotation={[0.13, 0.1, 0]}
-          polar={[-0.4, 0.4]}
-          azimuth={[-1, 0.75]}
+          polar={[-0.8, 0.4]}
+          azimuth={[-1.2, 1.2]}
           config={{ mass: 2, tension: 400 }}
           snap={{ mass: 2, tension: 400 }}
         >

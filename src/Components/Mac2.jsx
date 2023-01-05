@@ -17,6 +17,9 @@ export default function Model(props) {
 
   const group = useRef();
   const state = new useThree();
+  let yTranslation;
+
+  yTranslation = props.mobile ? 0.1 : 0.25;
 
   useFrame((delta) => {
     const t = state.clock.getElapsedTime();
@@ -37,7 +40,7 @@ export default function Model(props) {
     );
     group.current.position.y = THREE.MathUtils.lerp(
       group.current.position.y,
-      (Math.sin(t / 2) * 0.25) / 1,
+      (Math.sin(t / 2) * yTranslation) / 1,
       0.1
     );
   });
