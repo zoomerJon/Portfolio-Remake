@@ -21,6 +21,7 @@ import Phone from "./Components/Phone";
 import Stand from "./Components/Stand";
 import Tablet from "./Components/Tablet";
 import "./App.css";
+import { useEffect } from "react";
 
 function Lights() {
   const light = useRef();
@@ -55,6 +56,12 @@ function TabletSetup() {
 }
 
 const App = () => {
+  const [mobile, setMobile] = useState(false);
+
+  // useEffect();
+
+  // window.innerHeight > window.innerWidth && setMobile(true);
+
   return (
     <div className="main">
       <Canvas
@@ -106,6 +113,7 @@ const App = () => {
           <PerspectiveCamera
             makeDefault
             fov={40}
+            // position={mobile ? [0, 2.95, 12] : [0, 2.95, 8]}
             position={[0, 2.95, 8]}
             // rotation={[
             //   -0.16216382099825055, 0.050260368961909295, 0.008218970661645904,

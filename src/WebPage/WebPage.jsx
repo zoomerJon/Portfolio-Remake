@@ -4,7 +4,7 @@ export default function WebPage() {
   return (
     <div className="webpage">
       <div className="">
-        <h3 className="heading">Recent Works/Projects</h3>
+        <h4 className="heading">Recent Works/Projects</h4>
         <div className="recent-works">
           <div className="work-card">
             <img src="/acfc-demo.png" />
