@@ -92,10 +92,12 @@ const App = () => {
           height={0.5}
           lineHeight={0.5}
           letterSpacing={-0.06}
-          size={1.1}
+          size={mobile ? 0.8 : 1.1}
           font="/Inter_Bold.json"
-          position={[-4.8, 3, -0.5]}
-          rotation={[0.05, 0.3, -0.01]}
+          position={mobile ? [-1.4, 3, -0.5] : [-4.8, 3, -0.5]}
+          // position={[-4.8, 3, -0.5]}
+          rotation={mobile ? [0.03, 0, 0] : [0.05, 0.3, -0.01]}
+          // rotation={[0.05, 0.3, -0.01]}
         >
           Hello!
           <meshNormalMaterial />
@@ -113,7 +115,7 @@ const App = () => {
           <PerspectiveCamera
             makeDefault
             fov={40}
-            position={mobile ? [0, 3, 12] : [0, 2.95, 8]}
+            position={mobile ? [0, 4, 10] : [0, 2.95, 8]}
             // position={[0, 2.95, 8]}
             // rotation={[
             //   -0.16216382099825055, 0.050260368961909295, 0.008218970661645904,

@@ -164,7 +164,7 @@ span.header {
 @media (max-width: 768px) {
   .test {
     right: 5vw;
-    top: 0;
+    top: 1em;
     height: 40vh;
     width: 90vw;
   }
