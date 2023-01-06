@@ -74,6 +74,7 @@ const App = () => {
         // }}
         shadows
         className="canvas"
+        style={{ touchAction: "none" }}
       >
         {/* <ambientLight intensity={0.2} /> */}
         <Lights />
