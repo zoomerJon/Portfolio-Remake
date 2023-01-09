@@ -25,7 +25,7 @@ export default function Model(props) {
 
   useFrame((delta) => {
     const t = state.clock.getElapsedTime();
-    if (active) {
+    if (active && !props.mobile) {
       gsap.to(state.camera.position, {
         z: 5,
         duration: 2,
@@ -34,7 +34,7 @@ export default function Model(props) {
         y: 1.5,
         duration: 2,
       });
-    } else {
+    } else if (!props.mobile) {
       gsap.to(state.camera.position, {
         z: 8,
         duration: 2,
@@ -88,7 +88,7 @@ export default function Model(props) {
           <mesh
             // position={[0, 2, 0]}
             geometry={nodes.abgVijaHVNRUvcc.geometry}
-            // material={materials.UpOvKwLUUXPmnPU}
+            material={materials.UpOvKwLUUXPmnPU}
           >
             <Html
               rotation-x={-Math.PI / 8.8}
