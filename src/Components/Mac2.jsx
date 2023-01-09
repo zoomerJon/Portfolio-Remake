@@ -26,8 +26,13 @@ export default function Model(props) {
   useFrame((delta) => {
     const t = state.clock.getElapsedTime();
     if (active && !props.mobile) {
+      // document.getElementById("profile").classList.add("hide");
       gsap.to(state.camera.position, {
         z: 5,
+        duration: 2,
+      });
+      gsap.to(".test", {
+        y: -450,
         duration: 2,
       });
       gsap.to(state.camera.position, {
@@ -35,6 +40,11 @@ export default function Model(props) {
         duration: 2,
       });
     } else if (!props.mobile) {
+      // document.getElementById("profile").classList.remove("hide");
+      gsap.to(".test", {
+        y: 0,
+        duration: 2,
+      });
       gsap.to(state.camera.position, {
         z: 8,
         duration: 2,

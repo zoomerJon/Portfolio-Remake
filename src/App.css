@@ -160,6 +160,10 @@ span.header {
   color: #000;
 }
 
+.hide {
+  display: none;
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   .test {
