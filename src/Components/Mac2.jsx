@@ -6,14 +6,16 @@ source: https://sketchfab.com/3d-models/2021-macbook-pro-14-m1-pro-m1-max-f6b0b9
 title: 2021 Macbook Pro 14" (M1 Pro / M1 Max)
 */
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import * as THREE from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Html, useGLTF } from "@react-three/drei";
 import WebPage from "../WebPage/WebPage.jsx";
+import gsap from "gsap";
 
 export default function Model(props) {
   const { nodes, materials } = useGLTF("/mac-v1.glb");
+  const [active, setActive] = useState(false);
 
   const group = useRef();
   const state = new useThree();
@@ -23,6 +25,25 @@ export default function Model(props) {
 
   useFrame((delta) => {
     const t = state.clock.getElapsedTime();
+    if (active) {
+      gsap.to(state.camera.position, {
+        z: 5,
+        duration: 2,
+      });
+      gsap.to(state.camera.position, {
+        y: 1.5,
+        duration: 2,
+      });
+    } else {
+      gsap.to(state.camera.position, {
+        z: 8,
+        duration: 2,
+      });
+      gsap.to(state.camera.position, {
+        y: 2.95,
+        duration: 2,
+      });
+    }
     group.current.rotation.x = THREE.MathUtils.lerp(
       group.current.rotation.x,
       Math.cos(t / 2) / 20 + 0.15,
@@ -72,8 +93,8 @@ export default function Model(props) {
             <Html
               rotation-x={-Math.PI / 8.8}
               position={[0, 10.28, -15.5]}
-              // scale={0.075}
-              scale={[3.65, 3.67, 3.6]}
+              scale={[2.433, 2.4467, 2.4]}
+              // scale={[3.65, 3.67, 3.6]}
               transform
               occlude
               className="content-mac mac"
@@ -134,6 +155,7 @@ export default function Model(props) {
             material={materials.SKOFticEGTqECbB}
           />
           <mesh
+            // keys
             geometry={nodes.RkSurqpnfNMQZfv.geometry}
             material={materials.zWLcvvnJhbcTEtJ}
           />
@@ -162,6 +184,7 @@ export default function Model(props) {
             material={materials.PCfVLhSpFVCvRmc}
           />
           <mesh
+            //keys frame
             geometry={nodes.eAcvqfZlEdoxHsj.geometry}
             material={materials.IlNnjEDxsExlBOr}
           />
@@ -198,6 +221,7 @@ export default function Model(props) {
             material={materials.zaEqorbaeeADKgU}
           />
           <mesh
+            // trackpad
             geometry={nodes.NWErafhynAfYQEz.geometry}
             material={materials.pZbDFXVUkfRwjmQ}
           />
@@ -206,6 +230,7 @@ export default function Model(props) {
             material={materials.UPMcPXFSRXevSGt}
           />
           <mesh
+            // keyboard letters/numbers
             geometry={nodes.QYMcPaZnXQfyXcJ.geometry}
             material={materials.NQXltfOcKPZPQdI}
           />
@@ -218,8 +243,12 @@ export default function Model(props) {
             material={materials.mpJhsaJJZPPWMEX}
           />
           <mesh
+            // keyboard
             geometry={nodes.QFFLzaWPRnuQYJR.geometry}
             material={materials.hPcehRUjcLAosED}
+            onClick={() => {
+              setActive(!active);
+            }}
           />
           <mesh
             geometry={nodes.xjTvBwZFGvSMOud.geometry}
