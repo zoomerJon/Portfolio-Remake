@@ -11,6 +11,13 @@
   padding: 0 !important;
 }
 
+.work-card a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  margin: none;
+}
+
 .webpage {
   padding: 0;
 }
@@ -61,11 +68,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 .work-card img {
   width: 100%;
   border-radius: 5px 5px 0px 0px;
+}
+img.donut {
+  background: #fff;
+  height: 75px;
+  margin: 2em;
+}
+.work-card.donuts {
+  background: #fff;
+}
+.donuts-background {
+  background: #ddd;
+  width: 100%;
 }
 
 .work-title {
