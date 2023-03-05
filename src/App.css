@@ -169,7 +169,7 @@ span.header {
   .test {
     right: 5vw;
     top: 0.5em;
-    height: 40vh;
+    /* height: 40vh; */
     width: 90vw;
   }
   .profile-container {
