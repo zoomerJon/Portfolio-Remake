@@ -6,7 +6,7 @@ export default function WebPage() {
       <div className="">
         <h4 className="heading">Recent Works/Projects</h4>
         <div className="recent-works">
-          <a href="https://www.aguilascfc.org/en">
+          <a href="https://www.aguilascfc.org/en/">
             <div className="work-card">
               <img src="/acfc-demo.png" />
               <div className="work-title">Megachurch Website</div>
