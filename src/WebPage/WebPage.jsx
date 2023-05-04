@@ -18,7 +18,7 @@ export default function WebPage() {
               </div>
             </div>
           </a>
-          <div className="work-card">
+          {/* <div className="work-card">
             <img src="/old-portfolio-demo.png" />
             <div className="work-title">Previous Portfolio</div>
             <div className="work-tags">
@@ -27,16 +27,16 @@ export default function WebPage() {
               <div className="work-tag javascript">JavaScript</div>
               <div className="work-tag html">HTML</div>
             </div>
-          </div>
-          {/* <div className="work-card">
-            <img src="/old-portfolio-demo.png" />
+          </div> */}
+          <div className="work-card">
+            <img src="/cattitude.png" />
             <div className="work-title">Artist Portfolio</div>
             <div className="work-tags">
               <div className="work-tag html">HTML</div>
               <div className="work-tag css">CSS</div>
               <div className="work-tag javascript">JavaScript</div>
             </div>
-          </div> */}
+          </div>
           <div className="work-card">
             <img src="/groupsearch-webapp-demo.png" />
             <div className="work-title">Group Search Web App</div>
