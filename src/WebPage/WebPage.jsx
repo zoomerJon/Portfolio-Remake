@@ -6,7 +6,7 @@ export default function WebPage() {
       <div className="">
         <h4 className="heading">Recent Works/Projects</h4>
         <div className="recent-works">
-          <a href="https://www.aguilascfc.org/">
+          <a href="https://www.aguilascfc.org/en">
             <div className="work-card">
               <img src="/acfc-demo.png" />
               <div className="work-title">Megachurch Website</div>
@@ -28,6 +28,15 @@ export default function WebPage() {
               <div className="work-tag html">HTML</div>
             </div>
           </div>
+          {/* <div className="work-card">
+            <img src="/old-portfolio-demo.png" />
+            <div className="work-title">Artist Portfolio</div>
+            <div className="work-tags">
+              <div className="work-tag html">HTML</div>
+              <div className="work-tag css">CSS</div>
+              <div className="work-tag javascript">JavaScript</div>
+            </div>
+          </div> */}
           <div className="work-card">
             <img src="/groupsearch-webapp-demo.png" />
             <div className="work-title">Group Search Web App</div>

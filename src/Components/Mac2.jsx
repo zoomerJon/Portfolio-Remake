@@ -88,9 +88,11 @@ export default function Model(props) {
             material={materials.BczvixNfkWQzRzZ}
           />
           <mesh
+            // Webcam Mesh
+            // position={[0, 2, 0]}
             geometry={nodes.pPCeNYAcgHQGnfB.geometry}
             material={materials.jRMWtdSAaujlvUA}
-          />
+          ></mesh>
           <mesh
             geometry={nodes.CpRxqsFibJhVZKA.geometry}
             material={materials.CGiumILqqSMVyeb}
