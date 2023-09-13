@@ -2,6 +2,7 @@ import { forwardRef, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { PointLightHelper } from "three";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { FaMagnifyingGlassMinus, FaMagnifyingGlassPlus } from "react-icons/fa6";
 import {
   Backdrop,
   ContactShadows,
@@ -10,7 +11,6 @@ import {
   PerspectiveCamera,
   PresentationControls,
   useHelper,
-  Stars,
   Text3D,
 } from "@react-three/drei";
 import Background from "./Components/Background";
@@ -54,6 +54,7 @@ function TabletSetup() {
 
 const App = () => {
   const [mobile, setMobile] = useState(false);
+  const [laptopActive, setLaptopActive] = useState(false);
 
   useEffect(() => {
     window.innerHeight > window.innerWidth && setMobile(true);
@@ -90,7 +91,23 @@ const App = () => {
           scale={[10, 10, 10]}
           castShadow
           mobile={mobile}
+          laptopActive={laptopActive}
         />
+        <Html
+          position={!laptopActive ? [-0.6, 2.75, -3] : [-0.4, 2.4, -3]}
+          occlude
+        >
+          <div
+            onClick={() => {
+              setLaptopActive(!laptopActive);
+            }}
+            className="view-button"
+          >
+            <span className="view-text">View Projects</span>{" "}
+            <FaMagnifyingGlassPlus /> <span className="slash">/</span>
+            <FaMagnifyingGlassMinus />
+          </div>
+        </Html>
         <PresentationControls
           global
           cursor={false}

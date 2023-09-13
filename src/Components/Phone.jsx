@@ -96,7 +96,7 @@ export default function Model(props) {
                 occlude
                 className="phone"
               >
-                <WebPage />
+                <WebPage screen={"mobile"} />
               </Html>
             </mesh>
             <mesh

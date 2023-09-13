@@ -1,11 +1,12 @@
 .content-mac {
-  background-color: white;
+  /* background-color: white; */
+  background: rgb(169, 169, 169);
   border-radius: 5px;
-  color: black;
-  height: 324px;
-  /* height: 216px; */
-  width: 501px;
-  /* width: 334px; */
+  color: #fff;
+  /* height: 324px; */
+  height: 648px;
+  /* width: 501px; */
+  width: 1002px;
   overflow-y: auto;
   margin: 0;
   padding: 0 !important;
@@ -20,6 +21,7 @@
 
 .webpage {
   padding: 0;
+  position: relative;
 }
 
 .phone {
@@ -32,9 +34,21 @@
   overflow-y: auto;
   scrollbar-width: none;
 }
+.phone h4 {
+  font-size: 1rem;
+}
+.phone .work-title {
+  font-size: 0.8rem;
+}
+.phone .modal {
+  grid-template-columns: 1fr;
+  max-height: 90%;
+  overflow: scroll;
+}
 
 .heading {
-  margin: 0.5em 0;
+  font-size: 2rem;
+  margin: 1em 0;
   padding: 0 5px;
   text-align: center;
 }
@@ -68,7 +82,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .work-card img {
@@ -89,9 +103,9 @@ img.donut {
 }
 
 .work-title {
-  font-size: 10px;
+  font-size: 1.25rem;
   margin: 2px 0;
-  padding: 0 2px;
+  padding: 0.3rem 2px;
   line-height: 1;
   text-align: center;
 }
@@ -103,23 +117,28 @@ img.donut {
   padding: 0 5px;
   width: 100%;
   flex-wrap: wrap;
-  margin: 0 0 0.5em 0;
+  margin-bottom: 1rem;
+  margin-top: 0.25rem;
   /* justify-content: space-between; */
 }
 
 .work-tag {
-  font-size: 6px;
+  font-size: 0.7rem;
   font-weight: 500;
   color: #fff;
   /* margin-right: 2px; */
   /* border: 0.5px solid #333; */
   margin-bottom: 0.3em;
   border-radius: 3px;
-  padding: 2px;
+  padding: 0.3rem 0.5rem;
   line-height: 1;
-  margin-right: 2px;
+  margin-right: 0.4rem;
 }
-
+.filler-tag {
+  background: #ddd;
+  height: 1.9rem;
+  width: 100%;
+}
 .html {
   background-color: #ff6013;
 }
@@ -144,4 +163,200 @@ img.donut {
 }
 .redux {
   background-color: #8700df;
+}
+
+.view-button {
+  background-color: #222;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  position: fixed;
+  padding: 0.6rem;
+}
+.view-text {
+  margin-right: 0.5rem;
+}
+.slash {
+  margin: 0 0.2rem;
+}
+.view-button svg {
+  /* height: 2em;
+  width: 2em; */
+}
+.view-project {
+  background-color: #08a1f9;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.05rem 0.5rem;
+  font-size: 0.8rem;
+  margin: auto;
+  margin-top: 2rem;
+  width: fit-content;
+}
+.modal {
+  background-color: #222;
+  border-radius: 5px;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  width: 95%;
+  margin: 0 2.5%;
+  padding: 1rem;
+  top: 5%;
+  position: fixed;
+  z-index: 9999;
+}
+.modal svg {
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+}
+.close {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.75rem;
+}
+.project-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+.project-description {
+  margin-left: 1rem;
+  line-height: 2;
+}
+#overlay-desktop,
+#overlay-mobile {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  z-index: 15;
+}
+.hide {
+  display: none;
+}
+/* Slideshow container  */
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  /* margin: auto; */
+}
+.slideshow-container img {
+  border-radius: 5px;
+  /* padding: 0 12.5%; */
+  /* height: 200px; */
+  width: 100%;
+}
+.dots-container {
+  text-align: center;
+  width: 100%;
+}
+
+/* Hide the images by default */
+.mySlides {
+  padding: 0 12.5%;
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  background-color: rgba(34, 34, 34, 0.5);
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 75%;
+  text-align: center;
+  display: none;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }

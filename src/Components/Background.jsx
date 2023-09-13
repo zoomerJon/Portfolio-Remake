@@ -20,13 +20,13 @@ export default function Background() {
       if (curColor >= colors.length) {
         curColor = 0;
       }
-      console.log(state.camera.position);
-      console.log(state.camera.rotation);
-      console.log(
-        new THREE.Vector3(0, 0, -2)
-          .applyQuaternion(state.camera.quaternion)
-          .add(state.camera.position)
-      );
+      // console.log(state.camera.position);
+      // console.log(state.camera.rotation);
+      // console.log(
+      //   new THREE.Vector3(0, 0, -2)
+      //     .applyQuaternion(state.camera.quaternion)
+      //     .add(state.camera.position)
+      // );
       setColor(colors[curColor]);
     }, 2000);
   }, [color]);

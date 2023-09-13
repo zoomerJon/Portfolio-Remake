@@ -21,15 +21,15 @@ export default function Model(props) {
   const state = new useThree();
   let yTranslation;
 
-  yTranslation = props.mobile ? 0.1 : 0.25;
+  yTranslation = props.mobile ? 0.1 : 0.05;
 
   useFrame((delta) => {
     const t = state.clock.getElapsedTime();
-    if (active && !props.mobile) {
+    if (props.laptopActive && !props.mobile) {
       // document.getElementById("profile").classList.add("hide");
       gsap.to(state.camera.position, {
-        z: 5,
-        duration: 2,
+        z: 2.25,
+        duration: 1.25,
       });
       gsap.to(".test", {
         y: -450,
@@ -54,26 +54,33 @@ export default function Model(props) {
         duration: 2,
       });
     }
-    group.current.rotation.x = THREE.MathUtils.lerp(
-      group.current.rotation.x,
-      Math.cos(t / 2) / 20 + 0.15,
-      0.1
-    );
-    group.current.rotation.y = THREE.MathUtils.lerp(
-      group.current.rotation.y,
-      Math.sin(t / 4) / 20,
-      0.1
-    );
-    group.current.rotation.z = THREE.MathUtils.lerp(
-      group.current.rotation.z,
-      Math.sin(t / 8) / 20,
-      0.1
-    );
-    group.current.position.y = THREE.MathUtils.lerp(
-      group.current.position.y,
-      Math.sin(t / 2) * yTranslation,
-      0.1
-    );
+    if (!props.laptopActive) {
+      group.current.rotation.x = THREE.MathUtils.lerp(
+        group.current.rotation.x,
+        Math.cos(t / 2) / 20 + 0.15,
+        0.1
+      );
+      group.current.rotation.y = THREE.MathUtils.lerp(
+        group.current.rotation.y,
+        Math.sin(t / 4) / 20,
+        0.1
+      );
+      group.current.rotation.z = THREE.MathUtils.lerp(
+        group.current.rotation.z,
+        Math.sin(t / 8) / 20,
+        0.1
+      );
+      group.current.position.y = THREE.MathUtils.lerp(
+        group.current.position.y,
+        Math.sin(t / 2) * yTranslation,
+        0.1
+      );
+    } else {
+      group.current.rotation.x = 0;
+      group.current.rotation.y = 0;
+      group.current.rotation.z = 0;
+      group.current.position.y = 0;
+    }
   });
   return (
     <group {...props} dispose={null} ref={group}>
@@ -105,14 +112,25 @@ export default function Model(props) {
             <Html
               rotation-x={-Math.PI / 8.8}
               position={[0, 10.28, -15.5]}
-              scale={[2.433, 2.4467, 2.4]}
+              // scale={[2.433, 2.4467, 2.4]}
+              scale={[1.2165, 1.22335, 1.2]}
               // scale={[3.65, 3.67, 3.6]}
               transform
               occlude
               className="content-mac mac"
             >
-              <WebPage />
+              <WebPage screen={"desktop"} />
             </Html>
+            {/* <Html position={!active ? [0, 27, 0] : [0, 23, 0]}>
+              <div
+                onClick={() => {
+                  setActive(!active);
+                }}
+                className="view-button"
+              >
+                View Projects
+              </div>
+            </Html> */}
           </mesh>
           <mesh
             geometry={nodes.CEvArJuvvmtQsgk.geometry}
