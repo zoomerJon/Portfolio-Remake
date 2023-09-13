@@ -100,7 +100,7 @@ const App = () => {
             onClick={() => {
               setLaptopActive(!laptopActive);
             }}
-            className="view-button"
+            className="view-button desktop"
           >
             <span className="view-text">View Projects</span>{" "}
             <FaMagnifyingGlassPlus /> <span className="slash">/</span>
