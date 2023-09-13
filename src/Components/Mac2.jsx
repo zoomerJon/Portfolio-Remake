@@ -6,11 +6,12 @@ source: https://sketchfab.com/3d-models/2021-macbook-pro-14-m1-pro-m1-max-f6b0b9
 title: 2021 Macbook Pro 14" (M1 Pro / M1 Max)
 */
 
-import React, { useRef, useState } from "react";
+import React, { lazy, useRef, useState } from "react";
 import * as THREE from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Html, useGLTF } from "@react-three/drei";
-import WebPage from "../WebPage/WebPage.jsx";
+const WebPage = lazy(() => import("../WebPage/WebPage.jsx"));
+// import WebPage from "../WebPage/WebPage.jsx";
 import gsap from "gsap";
 
 export default function Model(props) {
