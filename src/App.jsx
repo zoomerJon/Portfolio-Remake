@@ -4,10 +4,9 @@ import { PointLightHelper } from "three";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { FaMagnifyingGlassMinus, FaMagnifyingGlassPlus } from "react-icons/fa6";
 import {
-  Backdrop,
   ContactShadows,
   Html,
-  OrbitControls,
+  Loader,
   PerspectiveCamera,
   PresentationControls,
   useHelper,
@@ -133,6 +132,7 @@ const App = () => {
         />
         <Background />
       </Canvas>
+      <Loader />
     </div>
   );
 };
