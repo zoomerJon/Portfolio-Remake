@@ -1,11 +1,8 @@
 .content-mac {
-  /* background-color: white; */
   background: rgb(169, 169, 169);
   border-radius: 5px;
   color: #fff;
-  /* height: 324px; */
   height: 648px;
-  /* width: 501px; */
   width: 1002px;
   overflow-y: auto;
   margin: 0;
@@ -24,28 +21,6 @@
   position: relative;
 }
 
-.phone {
-  /* background-color: slateblue; */
-  background-color: #fff;
-  border-radius: 10px;
-  color: #333;
-  width: 180px;
-  height: 390px;
-  overflow-y: auto;
-  scrollbar-width: none;
-}
-.phone h4 {
-  font-size: 1rem;
-}
-.phone .work-title {
-  font-size: 0.8rem;
-}
-.phone .modal {
-  grid-template-columns: 1fr;
-  max-height: 90%;
-  overflow: scroll;
-}
-
 .heading {
   font-size: 2rem;
   margin: 1em 0;
@@ -62,14 +37,6 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 32px 24px;
   margin: 0 1em 1em 1em;
-}
-
-.phone .recent-works {
-  margin: 0 5%;
-  width: 90%;
-}
-.phone .work-card {
-  margin-bottom: 1em;
 }
 
 .work-card {
@@ -167,6 +134,7 @@ img.donut {
 
 .view-button {
   background-color: #222;
+  border: #fff 2px solid;
   border-radius: 5px;
   cursor: pointer;
   display: flex;
@@ -174,6 +142,7 @@ img.donut {
   white-space: nowrap;
   position: fixed;
   padding: 0.6rem;
+  transition: all 0.4s ease-out;
 }
 .view-text {
   margin-right: 0.5rem;
@@ -359,6 +328,43 @@ img.donut {
   to {
     opacity: 1;
   }
+}
+
+.phone {
+  /* background-color: slateblue; */
+  background-color: rgb(169, 169, 169);
+  border-radius: 10px;
+  color: #333;
+  width: 180px;
+  height: 390px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.phone .recent-works {
+  margin: 0 5%;
+  width: 90%;
+}
+.phone .work-card {
+  margin-bottom: 1em;
+}
+.phone h4 {
+  color: #fff;
+  font-size: 1rem;
+}
+.phone .work-title {
+  font-size: 0.8rem;
+}
+.phone .modal {
+  grid-template-columns: 1fr;
+  max-height: 90%;
+  overflow: scroll;
+}
+.phone .view-project {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.phone .project-title {
+  margin-bottom: 0.5rem;
 }
 
 @media (max-width: 767px) {

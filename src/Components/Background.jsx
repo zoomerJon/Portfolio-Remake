@@ -55,7 +55,7 @@ export default function Background() {
       receiveShadow
       floor={2}
       position={[0, -0.8, -3]}
-      scale={[50, 10, 8]}
+      scale={[40, 10, 8]}
       onClick={() => {
         setActive(!active);
       }}

@@ -6,7 +6,7 @@ source: https://sketchfab.com/3d-models/2021-macbook-pro-14-m1-pro-m1-max-f6b0b9
 title: 2021 Macbook Pro 14" (M1 Pro / M1 Max)
 */
 
-import React, { lazy, useRef, useState } from "react";
+import React, { lazy, useEffect, useRef, useState, forwardRef } from "react";
 import * as THREE from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Html, useGLTF } from "@react-three/drei";
@@ -14,34 +14,44 @@ const WebPage = lazy(() => import("../WebPage/WebPage.jsx"));
 // import WebPage from "../WebPage/WebPage.jsx";
 import gsap from "gsap";
 
-export default function Model(props) {
+export default forwardRef(function Model(props, ref) {
   const { nodes, materials } = useGLTF("/mac-v1.glb");
-  const [active, setActive] = useState(false);
 
   const group = useRef();
   const state = new useThree();
   let yTranslation;
 
-  yTranslation = props.mobile ? 0.1 : 0.05;
+  yTranslation = props.mobile ? 0.01 : 0.005;
 
-  useFrame((delta) => {
-    const t = state.clock.getElapsedTime();
+  useEffect(() => {
     if (props.laptopActive && !props.mobile) {
       // document.getElementById("profile").classList.add("hide");
-      gsap.to(state.camera.position, {
-        z: 2.25,
-        duration: 1.25,
-      });
       gsap.to(".test", {
         y: -450,
         duration: 2,
       });
       gsap.to(state.camera.position, {
+        z: 2.25,
+        duration: 1.25,
+      });
+      gsap.to(state.camera.position, {
         y: 1.5,
+        duration: 1.25,
+      });
+    } else if (props.laptopActive && props.mobile) {
+      gsap.to(".test", {
+        y: -450,
         duration: 2,
       });
-    } else if (!props.mobile) {
-      // document.getElementById("profile").classList.remove("hide");
+      gsap.to(state.camera.position, {
+        z: 3.75,
+        duration: 1.25,
+      });
+      gsap.to(state.camera.position, {
+        y: 1.5,
+        duration: 1.25,
+      });
+    } else if (!props.laptopActive && !props.mobile) {
       gsap.to(".test", {
         y: 0,
         duration: 2,
@@ -54,37 +64,54 @@ export default function Model(props) {
         y: 2.95,
         duration: 2,
       });
+    } else if (!props.laptopActive && props.mobile) {
+      gsap.to(".test", {
+        y: 0,
+        duration: 2,
+      });
+      gsap.to(state.camera.position, {
+        z: 10,
+        duration: 2,
+      });
+      gsap.to(state.camera.position, {
+        y: 4,
+        duration: 2,
+      });
     }
-    if (!props.laptopActive) {
-      group.current.rotation.x = THREE.MathUtils.lerp(
-        group.current.rotation.x,
-        Math.cos(t / 2) / 20 + 0.15,
-        0.1
-      );
-      group.current.rotation.y = THREE.MathUtils.lerp(
-        group.current.rotation.y,
-        Math.sin(t / 4) / 20,
-        0.1
-      );
-      group.current.rotation.z = THREE.MathUtils.lerp(
-        group.current.rotation.z,
-        Math.sin(t / 8) / 20,
-        0.1
-      );
-      group.current.position.y = THREE.MathUtils.lerp(
-        group.current.position.y,
-        Math.sin(t / 2) * yTranslation,
-        0.1
-      );
-    } else {
-      group.current.rotation.x = 0;
-      group.current.rotation.y = 0;
-      group.current.rotation.z = 0;
-      group.current.position.y = 0;
-    }
-  });
+  }, [props.laptopActive]);
+
+  // useFrame((delta) => {
+  //   const t = state.clock.getElapsedTime();
+  //   if (!props.laptopActive) {
+  //     group.current.rotation.x = THREE.MathUtils.lerp(
+  //       group.current.rotation.x,
+  //       Math.cos(t / 2) / 20 + 0.15,
+  //       0.1
+  //     );
+  //     group.current.rotation.y = THREE.MathUtils.lerp(
+  //       group.current.rotation.y,
+  //       Math.sin(t / 4) / 20,
+  //       0.1
+  //     );
+  //     group.current.rotation.z = THREE.MathUtils.lerp(
+  //       group.current.rotation.z,
+  //       Math.sin(t / 8) / 20,
+  //       0.1
+  //     );
+  //     group.current.position.y = THREE.MathUtils.lerp(
+  //       group.current.position.y,
+  //       Math.sin(t / 2) * yTranslation,
+  //       0.1
+  //     );
+  //   } else {
+  //     group.current.rotation.x = 0;
+  //     group.current.rotation.y = 0;
+  //     group.current.rotation.z = 0;
+  //     group.current.position.y = 0;
+  //   }
+  // });
   return (
-    <group {...props} dispose={null} ref={group}>
+    <group {...props} dispose={null} ref={ref}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <mesh
@@ -123,15 +150,15 @@ export default function Model(props) {
               <WebPage screen={"desktop"} />
             </Html>
             {/* <Html position={!active ? [0, 27, 0] : [0, 23, 0]}>
-              <div
-                onClick={() => {
-                  setActive(!active);
-                }}
-                className="view-button"
-              >
-                View Projects
-              </div>
-            </Html> */}
+                <div
+                  onClick={() => {
+                    setActive(!active);
+                  }}
+                  className="view-button"
+                >
+                  View Projects
+                </div>
+              </Html> */}
           </mesh>
           <mesh
             geometry={nodes.CEvArJuvvmtQsgk.geometry}
@@ -277,9 +304,6 @@ export default function Model(props) {
             // keyboard
             geometry={nodes.QFFLzaWPRnuQYJR.geometry}
             material={materials.hPcehRUjcLAosED}
-            onClick={() => {
-              setActive(!active);
-            }}
           />
           <mesh
             geometry={nodes.xjTvBwZFGvSMOud.geometry}
@@ -325,6 +349,6 @@ export default function Model(props) {
       </group>
     </group>
   );
-}
+});
 
 useGLTF.preload("/mac-v1.glb");

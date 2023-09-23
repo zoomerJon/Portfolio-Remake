@@ -30,14 +30,27 @@ export default function ProjectModal(props) {
     if (n < 1) {
       slideIndex = slides.length;
     }
-    for (i = 0; i < slides.length - 2; i++) {
-      slides[i + 2].style.display = "none";
+    if (props.screen == "mobile") {
+      // console.log("mobile slides");
+      for (i = 0; i < slides.length - 3; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length - 3; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
     }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+    if (props.screen == "desktop") {
+      for (i = 0; i < slides.length - 2; i++) {
+        slides[i + 2].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex + 2].style.display = "block";
+      dots[slideIndex + 2].className += " active";
     }
-    slides[slideIndex + 2].style.display = "block";
-    dots[slideIndex + 2].className += " active";
   };
   return (
     <div id={`${props.screen}-modal`} className="modal hide">

@@ -94,7 +94,7 @@ export default function Model(props) {
                 scale={[0.38, 0.38, 0.38]}
                 transform
                 occlude
-                className="phone"
+                className="content-phone phone"
               >
                 <WebPage screen={"mobile"} />
               </Html>
