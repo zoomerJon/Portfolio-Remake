@@ -52,15 +52,21 @@ function TabletSetup() {
   );
 }
 
-function Scene() {
+function Scene({ laptopActive }) {
   const [mobile, setMobile] = useState(false);
   const [active, setActive] = useState(false);
-  const [laptopActive, setLaptopActive] = useState(false);
+  const [springIndex, setSpringIndex] = useState(2);
+  // const [laptopActive, setLaptopActive] = useState(false);
 
-  const { scale, rotation } = useSpring({
-    scale: active ? [8, 8, 8] : [10, 10, 10],
-    rotation: [0, 0, 0],
+  const { spring } = useSpring({
+    spring: springIndex,
+    config: { mass: 5, tension: 400, friction: 50, precision: 0.0001 },
   });
+
+  // interpolate values from commong spring
+  const scale = spring.to([0, 1], [10, 10, 10], [2, 2, 2]);
+  const rotation = spring.to([0, 1], [0, Math.PI]);
+  const color = spring.to([0, 1], ["#6246ea", "#e45858"]);
 
   const ref = useRef();
   const state = new useThree();
@@ -69,7 +75,11 @@ function Scene() {
   yTranslation = mobile ? 0.01 : 0.005;
 
   useEffect(() => {
-    window.innerHeight > window.innerWidth && setMobile(true);
+    // window.innerHeight > window.innerWidth && setMobile(true);
+    if (window.innerHeight > window.innerWidth) {
+      setMobile(true);
+    }
+    document.getElementById("zoom-button").classList.add("desktop-position");
   }, []);
 
   useFrame((delta) => {
@@ -123,6 +133,7 @@ function Scene() {
         Hello!
         <meshNormalMaterial />
       </Text3D>
+
       <Phone
         position={!mobile ? [3.8, 0.4, -1] : [0.375, 0.3, -2]}
         rotation={
@@ -145,15 +156,16 @@ function Scene() {
           laptopActive={laptopActive}
         />
       </animated.mesh>
-      <Html
+      {/* <Html
         position={
           !laptopActive
             ? !mobile
               ? [-0.6, 2.75, -3]
-              : [-0.75, -0.2, 0.25]
-            : !mobile
+              : [-0.5, -0.2, 0.25]
+            : // : [-0.75, -0.2, 0.25]
+            !mobile
             ? [-0.4, 2.4, -3]
-            : [-0.25, -0.2, 0.25]
+            : [-0.75, -0.2, 0.25]
         }
         // occlude
         // className="desktop"
@@ -169,7 +181,7 @@ function Scene() {
           <FaMagnifyingGlassPlus /> <span className="slash">/</span>
           <FaMagnifyingGlassMinus />
         </div>
-      </Html>
+      </Html> */}
       <PresentationControls
         global
         cursor={false}
@@ -199,11 +211,25 @@ function Scene() {
 }
 
 const App = () => {
+  const [laptopActive, setLaptopActive] = useState(false);
+
   return (
     <div className="main">
       <Canvas shadows className="canvas" style={{ touchAction: "none" }}>
-        <Scene />
+        <Scene laptopActive={laptopActive} />
       </Canvas>
+      <div
+        id="zoom-button"
+        className="zoom"
+        onClick={() => {
+          setLaptopActive(!laptopActive);
+          console.log("hi");
+        }}
+      >
+        <span className="view-text">View Projects</span>{" "}
+        <FaMagnifyingGlassPlus /> <span className="slash">/</span>
+        <FaMagnifyingGlassMinus />
+      </div>
       <Loader />
     </div>
   );

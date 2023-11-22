@@ -80,36 +80,6 @@ export default forwardRef(function Model(props, ref) {
     }
   }, [props.laptopActive]);
 
-  // useFrame((delta) => {
-  //   const t = state.clock.getElapsedTime();
-  //   if (!props.laptopActive) {
-  //     group.current.rotation.x = THREE.MathUtils.lerp(
-  //       group.current.rotation.x,
-  //       Math.cos(t / 2) / 20 + 0.15,
-  //       0.1
-  //     );
-  //     group.current.rotation.y = THREE.MathUtils.lerp(
-  //       group.current.rotation.y,
-  //       Math.sin(t / 4) / 20,
-  //       0.1
-  //     );
-  //     group.current.rotation.z = THREE.MathUtils.lerp(
-  //       group.current.rotation.z,
-  //       Math.sin(t / 8) / 20,
-  //       0.1
-  //     );
-  //     group.current.position.y = THREE.MathUtils.lerp(
-  //       group.current.position.y,
-  //       Math.sin(t / 2) * yTranslation,
-  //       0.1
-  //     );
-  //   } else {
-  //     group.current.rotation.x = 0;
-  //     group.current.rotation.y = 0;
-  //     group.current.rotation.z = 0;
-  //     group.current.position.y = 0;
-  //   }
-  // });
   return (
     <group {...props} dispose={null} ref={ref}>
       <group rotation={[-Math.PI / 2, 0, 0]}>

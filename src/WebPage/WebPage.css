@@ -132,7 +132,15 @@ img.donut {
   background-color: #8700df;
 }
 
-.view-button {
+.zoom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  /* transform: translateX(50%); */
+  width: fit-content;
+  bottom: 8rem;
+  z-index: 999;
   background-color: #222;
   border: #fff 2px solid;
   border-radius: 5px;
@@ -140,9 +148,18 @@ img.donut {
   display: flex;
   align-items: center;
   white-space: nowrap;
-  position: fixed;
+  /* position: fixed; */
   padding: 0.6rem;
   transition: all 0.4s ease-out;
+}
+
+.desktop-position {
+  /* bottom: 6rem; */
+  /* top: 18rem; */
+  bottom: 6rem;
+}
+
+.view-button {
 }
 .view-text {
   margin-right: 0.5rem;
